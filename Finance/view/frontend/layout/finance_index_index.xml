@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" label="Sweet Home Finance" design_abstraction="custom">
+    <head>
+        <title>Finance33</title>
+    </head>
+    <body>
+        <attribute name="class" value="sweet_some_finance"/>
+        <referenceContainer name="sidebar.main">
+            <block class="Magento\Framework\View\Element\Template" name="sidebar.main.sweet_home_finance_rates"
+                   template="Magento_Theme::html/collapsible.phtml" before="-">
+                <arguments>
+                    <argument name="block_css" xsi:type="string">account-nav</argument>
+                </arguments>
+                <block class="Magento\Customer\Block\Account\Navigation" name="sweet_home_finance_navigation" before="-">
+                    <arguments>
+                        <argument name="css_class" xsi:type="string">nav items</argument>
+                    </arguments>
+                    <block class="Magento\Customer\Block\Account\SortLinkInterface" name="sweet_home_finance_rates">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">Rates</argument>
+                            <argument name="path" xsi:type="string">customer/account</argument>
+                            <argument name="sortOrder" xsi:type="number">500</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Customer\Block\Account\SortLinkInterface" name="sweet_home_finance_stocks">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">Stocks</argument>
+                            <argument name="path" xsi:type="string">customer/stocks</argument>
+                            <argument name="sortOrder" xsi:type="number">300</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Customer\Block\Account\SortLinkInterface" name="sweet_home_finance_sources">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">Sources</argument>
+                            <argument name="path" xsi:type="string">customer/sources</argument>
+                            <argument name="sortOrder" xsi:type="number">350</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="div.sidebar.additional" remove="true"/>
+
+    </body>
+</page>

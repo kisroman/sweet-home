@@ -1,0 +1,9 @@
+<table name="sweet_home_finance_rate" resource="default" engine="innodb"
+       comment="Rates">
+    <column xsi:type="int" name="id" padding="11" unsigned="false" nullable="false" identity="true" comment="Rate ID"/>
+    <column xsi:type="varchar" name="currency" padding="5" nullable="false" identity="false" comment="Currency"/>
+    <column xsi:type="real" name="coefficient" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Store ID"/>
+    <constraint xsi:type="primary" name="PRIMARY">
+        <column name="id"/>
+    </constraint>
+</table>
