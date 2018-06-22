@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">finance_rate_form_grid.finance_rate_form_grid_data_source</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <label translate="true">Rate Information</label>
+        <dataScope>data</dataScope>
+        <namespace>finance_rate_form_grid</namespace>
+        <deps>
+            <dep>finance_rate_form_grid.finance_rate_form_grid_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="finance_rate_form_grid_data_source" component="Magento_Ui/js/form/provider">
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
+        <dataProvider class="SweetHome\Finance\Ui\DataProvider\Rate" name="finance_rate_form_grid_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <columns name="rate_columns" class="Magento\Ui\Component\Listing\Columns">
+        <column name="id" sortOrder="10">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="currency" sortOrder="10">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Currency</label>
+            </settings>
+        </column>
+        <column name="coefficient" sortOrder="10">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Coefficient</label>
+            </settings>
+        </column>
+    </columns>
+    <!--<dynamicRows name="rates" component="Magento_Ui/js/dynamic-rows/dynamic-rows-grid" sortOrder="20">-->
+        <!--<argument name="data" xsi:type="array">-->
+            <!--<item name="js_config" xsi:type="array">-->
+                <!--<item name="map" xsi:type="array">-->
+                    <!--<item name="id" xsi:type="string">id</item>-->
+                    <!--<item name="currency" xsi:type="string">Currency</item>-->
+                    <!--<item name="Coefficient" xsi:type="string">coefficient</item>-->
+                <!--</item>-->
+                <!--<item name="identificationDRProperty" xsi:type="string">id</item>-->
+            <!--</item>-->
+        <!--</argument>-->
+        <!--<settings>-->
+            <!--<label translate="true">Rates</label>-->
+            <!--<defaultRecord>false</defaultRecord>-->
+            <!--<addButton>true</addButton>-->
+            <!--<deleteProperty>true</deleteProperty>-->
+            <!--<recordTemplate>record</recordTemplate>-->
+            <!--<identificationProperty>id</identificationProperty>-->
+            <!--<links>-->
+                <!--<link name="insertData">${ $.provider }:data.items</link>-->
+            <!--</links>-->
+            <!--<dndConfig>-->
+                <!--<param name="enabled" xsi:type="boolean">true</param>-->
+                <!--<param name="template" xsi:type="string">ui/dynamic-rows/cells/dnd</param>-->
+            <!--</dndConfig>-->
+            <!--<columnsHeader>true</columnsHeader>-->
+        <!--</settings>-->
+        <!--<container name="record" component="Magento_Ui/js/dynamic-rows/record">-->
+            <!--<argument name="data" xsi:type="array">-->
+                <!--<item name="config" xsi:type="array">-->
+                    <!--<item name="isTemplate" xsi:type="boolean">true</item>-->
+                    <!--<item name="is_collection" xsi:type="boolean">true</item>-->
+                    <!--<item name="dataScope" xsi:type="string"/>-->
+                    <!--<item name="positionProvider" xsi:type="string">priority</item>-->
+                <!--</item>-->
+            <!--</argument>-->
+            <!--<field name="id" formElement="input" sortOrder="10">-->
+                <!--<settings>-->
+                    <!--<elementTmpl>ui/dynamic-rows/cells/text</elementTmpl>-->
+                    <!--<dataType>number</dataType>-->
+                    <!--<dataScope>id</dataScope>-->
+                    <!--<label translate="true">Id</label>-->
+                <!--</settings>-->
+            <!--</field>-->
+            <!--<field name="currency" formElement="input" sortOrder="20">-->
+                <!--<settings>-->
+                    <!--<elementTmpl>ui/dynamic-rows/cells/text</elementTmpl>-->
+                    <!--<dataType>text</dataType>-->
+                    <!--<dataScope>currency</dataScope>-->
+                    <!--<label translate="true">Currency</label>-->
+                <!--</settings>-->
+            <!--</field>-->
+            <!--<field name="coefficient" formElement="input" sortOrder="30">-->
+                <!--<settings>-->
+                    <!--<elementTmpl>ui/form/element/input</elementTmpl>-->
+                    <!--<dataType>number</dataType>-->
+                    <!--<dataScope>coefficient</dataScope>-->
+                    <!--<label translate="true">Coefficient</label>-->
+                <!--</settings>-->
+            <!--</field>-->
+            <!--<field name="actionDelete" formElement="actionDelete" sortOrder="40">-->
+                <!--<settings>-->
+                    <!--<label translate="true">Delete</label>-->
+                <!--</settings>-->
+            <!--</field>-->
+        <!--</container>-->
+    <!--</dynamicRows>-->
+</listing>
